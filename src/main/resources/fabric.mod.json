@@ -1,0 +1,26 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "environment": "*",
+    "entrypoints": {
+        "server": []
+    },
+    "depends": {
+        "fabricloader": "*"
+    },
+    "mixins": [
+      "fbha.mixins.json"
+    ],
+    "name": "Fabric HAProxy",
+    "description": "Adds HAProxy PROXY protocol support to fabric servers",
+    "contact": {
+        "homepage": "https://wallentines.org/"
+    },
+    "authors": [
+        {
+            "name": "M1dnight_Ninja"
+        }
+    ],
+    "license": "LGPL"
+}
