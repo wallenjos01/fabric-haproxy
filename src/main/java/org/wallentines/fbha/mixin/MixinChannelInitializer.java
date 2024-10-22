@@ -16,8 +16,8 @@ public class MixinChannelInitializer {
 
     @Inject(method="initChannel", at=@At("TAIL"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void onServerStart(Channel channel, CallbackInfo ci, ChannelPipeline pipeline, Connection conn) {
-        channel.pipeline().addFirst("haproxy_handler", new HAProxyHandler(conn));
-        channel.pipeline().addFirst("haproxy_decoder", new HAProxyMessageDecoder());
+        channel.pipeline().addFirst(new HAProxyHandler(conn));
+        channel.pipeline().addFirst(new HAProxyMessageDecoder());
     }
 
 
