@@ -21,5 +21,6 @@ public class HAProxyHandler extends SimpleChannelInboundHandler<HAProxyMessage> 
 
         ((AccessorConnection) connection).setAddress(new InetSocketAddress(msg.sourceAddress(), msg.sourcePort()));
         ctx.pipeline().remove(this);
+        ctx.pipeline().remove("haproxy_decoder");
     }
 }
