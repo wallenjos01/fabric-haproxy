@@ -17,9 +17,9 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.2")
+    minecraft("com.mojang:minecraft:1.21.6-pre1")
     mappings(loom.officialMojangMappings())
 
-    modImplementation("net.fabricmc:fabric-loader:0.16.7")
-    modImplementation(include("io.netty:netty-codec-haproxy:4.1.97.Final")!!)
+    modImplementation("net.fabricmc:fabric-loader:0.16.14")
+    modImplementation(include("io.netty:netty-codec-haproxy:4.1.115.Final")!!)
 }
