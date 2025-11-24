@@ -1,4 +1,4 @@
-package build.plugin;
+package buildlogic;
 
 import org.gradle.api.Project;
 import org.gradle.language.jvm.tasks.ProcessResources;
@@ -6,11 +6,9 @@ import org.gradle.language.jvm.tasks.ProcessResources;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Common {
-
+public class Utils {
 
     public static String getArchiveName(Project project, Project rootProject) {
-
         if(rootProject == project) {
             return project.getName();
         } else {
@@ -45,6 +43,4 @@ public class Common {
         );
 
     }
-
-
 }

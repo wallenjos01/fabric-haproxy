@@ -1,12 +1,12 @@
-import build.plugin.Common
+import buildlogic.Utils
 
 plugins {
-    id("mod-build")
-    id("mod-fabric")
-    id("mod-publish")
+    id("build.library")
+    id("build.fabric")
+    id("build.publish")
 }
 
-Common.setupResources(project, rootProject, "fabric.mod.json")
+Utils.setupResources(project, rootProject, "fabric.mod.json")
 
 repositories {
     maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
@@ -17,9 +17,9 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.6-pre1")
+    minecraft("com.mojang:minecraft:1.21.10")
     mappings(loom.officialMojangMappings())
 
-    modImplementation("net.fabricmc:fabric-loader:0.16.14")
+    modImplementation("net.fabricmc:fabric-loader:0.17.3")
     modImplementation(include("io.netty:netty-codec-haproxy:4.1.115.Final")!!)
 }
