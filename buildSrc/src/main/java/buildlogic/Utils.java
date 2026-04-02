@@ -15,7 +15,7 @@ public class Utils {
             StringBuilder name = new StringBuilder(project.getName());
             var currentParent = project.getParent();
             while(currentParent != rootProject) {
-                if(currentParent == null) continue;
+                if(currentParent == null) break;
 
                 name.insert(0, currentParent.getName() + "-");
                 currentParent = currentParent.getParent();
