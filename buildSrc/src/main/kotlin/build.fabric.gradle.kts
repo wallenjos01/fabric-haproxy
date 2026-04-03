@@ -1,13 +1,9 @@
 import buildlogic.Utils
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import net.fabricmc.loom.task.RemapJarTask
-import net.fabricmc.loom.task.RemapSourcesJarTask
+
 
 plugins {
     id("build.common")
-    id("build.shadow")
     id("net.fabricmc.fabric-loom")
-    id("com.gradleup.shadow")
 }
 
 loom {
@@ -32,17 +28,4 @@ val archiveName = Utils.getArchiveName(project, rootProject)
 
 tasks.named<Jar>("jar") {
     archiveBaseName.set(archiveName)
-    archiveClassifier.set("partial")
-}
-
-tasks.named<ShadowJar>("shadowJar") {
-
-    val jar = tasks.named<Jar>("jar").get()
-    dependsOn(jar)
-    from(zipTree(jar.archiveFile))
-
-    archiveClassifier.set("")
-    archiveBaseName.set(archiveName)
-
-    configurations = listOf(project.configurations["shadow"])
 }
